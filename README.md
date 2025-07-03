@@ -46,6 +46,7 @@ Some species lacked coordinates, limiting pointer coverage. Additionally, improv
 
 ## Resources
 
+- Mammal Taxonomy Map: https://ivory-free-bone.glitch.me/
 - https://zenodo.org/records/7394529
 - https://github.com/mgrafals/Species_Images
 - https://chloromaps.com/map/world
