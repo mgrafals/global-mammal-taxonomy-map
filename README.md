@@ -30,9 +30,9 @@ Built with JavaScript (Leaflet.js), Python (for data wrangling and web scraping)
 
 ## Project Structure
 
-├── /data/ # Cleaned dataset files (Excel, GeoJSON)
-├── /map/ # Frontend map visualization (HTML, JS, CSS)
-├── /assets/ # Icons or visuals
+├── /data/ # Cleaned dataset files (Excel, GeoJSON) <br/>
+├── /map/ # Frontend map visualization (HTML, JS, CSS) <br/>
+├── /assets/ # Icons or visuals <br/>
 └── README.md
 
 
