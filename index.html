@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive IUCN Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2 id="map-title">World Mammal Species Distribution By International Union for Conservation of Nature (IUCN) Status </h2>
+    <div id="map"></div>
+    <div id="stats-box">
+      <h4></h4>
+      <p id="global-stats"></p>
+    </div>
+    <div id="filter">
+      <label for="iucn-filter">IUCN Status:</label>
+      <select id="iucn-filter">
+        <option value="all">All Categories</option>
+        <option value="Data Deficient or Unknown">
+          Data Deficient or Unknown
+        </option>
+        <option value="Extinct">Extinct</option>
+        <option value="Least Concern">Least Concern</option>
+        <option value="Threatened">Threatened</option>
+      </select>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
