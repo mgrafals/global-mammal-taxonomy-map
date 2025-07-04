@@ -1,54 +1,64 @@
 # Mammal Taxonomy Global Mapping Project
 
-An interactive map visualizing the global distribution, taxonomy, and conservation status of 6,600+ mammal species using data from the Mammal Diversity Database and IUCN.
+An interactive web visualization of global mammal species distribution using taxonomic data and conservation statuses, powered by Leaflet.js, GeoJSON, and Python-based data processing.
 
-## Overview
+## Project Summary
 
-This project visualizes mammal biodiversity across the world through two layers:
-- **Choropleth Layer**: Highlights countries based on the number of species in a selected IUCN status category.
-- **Pointer Layer**: Displays geospatial markers for 1,100+ species with latitude/longitude data and interactive popups containing species taxonomy, conservation info, and images.
+This project visualizes the spatial distribution of over 6,600 mammal species from the Mammal Diversity Database (MDD). Using geospatial pointers and choropleth shading by country, users can interactively explore IUCN conservation statuses, taxonomic details, and visual references for each species.
 
-Built with JavaScript (Leaflet.js), Python (for data wrangling and web scraping), and GeoJSON for geographic rendering.
+## Live Demo
 
-## Dataset & Sources
+[View Live Visualization](https://ivory-free-bone.glitch.me/)  
 
-- [Mammal Diversity Database (Zenodo)](https://zenodo.org/records/7394529)
-- IUCN conservation statuses
-- Images scraped using Google Search and hosted on [GitHub Images Repo](https://github.com/mgrafals/Species_Images)
-- Country borders and base map: OpenStreetMap
+## Technologies Used
+
+- **JavaScript / Leaflet.js** for map interactivity and dynamic pointer filtering
+- **Python / Pandas / Jupyter Notebooks** for data wrangling and preprocessing
+- **HTML/CSS** for layout and styling
+- **GeoJSON** for spatial overlays
+- **GitHub CDN** for image hosting
 
 ## Features
 
-- Filter map by IUCN category (e.g., Endangered, Critically Endangered, Least Concern, etc.)
-- Toggle pointers on/off to declutter the map
-- Clickable pointers with:
-  - Scientific/common name
-  - Genus, family
-  - Conservation status and author link
-  - Species image (or fallback image if unavailable)
-- Hover/click countries to view summary stats for a given category
+- Species-level **interactive popups** with taxonomic info, country distribution, and dynamically scraped images
+- Toggleable **pointer layer**, with color-coded markers by IUCN status
+- Clickable **legend** to filter markers by conservation status (grayed-out = inactive)
+- Choropleth layer indicating **country-level species counts** by IUCN category
+- Toggle between views for **exploratory data analysis**
 
-## Project Structure
+## File Guide
 
-├── /data/ # Cleaned dataset files (Excel, GeoJSON) <br/>
-├── /map/ # Frontend map visualization (HTML, JS, CSS) <br/>
-├── /assets/ # Icons or visuals <br/>
-└── README.md
+| File | Description |
+|------|-------------|
+| `index.html` | Base HTML file rendering the visualization |
+| `script.js` | JavaScript logic for pointers, filtering, popups |
+| `style.css` | Styling and layout for the interface |
+| `pointers.geojson` | GeoJSON with 1,100+ mapped species and metadata |
+| `custom.geo.json` | Country-level spatial layer used in choropleth view |
+| `InitialEDA.ipynb` | Notebook for early dataset exploration |
+| `speciesproject.ipynb` | Final data transformation and export notebook |
+| `updated_country_distribiution.xlsx` | Aggregated species counts per country |
+| `README.md` | Overview and usage |
+| `FULL_METHOD.md` | Full methodology, sourcing, and project context |
+| `.gitignore` | File to exclude unnecessary local files (see below) |
 
+## Additional Documentation
 
-## Scripts Used
+- [Full Methodology & User Guide](./FULL_METHOD.md) — A narrative explanation of the dataset, visual design, limitations, and how to interpret the visualization.
 
-- Data cleaning and transformation scripts (Jupyter) for formatting GeoJSON and Excel files
+## Resources and References
 
-## Reflection
+- [Mammal Diversity Database (MDD) – Zenodo](https://zenodo.org/records/7394529)
+- [Mammal Diversity Database Website](https://mammaldiversity.org)
+- [Species Images GitHub Repo](https://github.com/mgrafals/Species_Images)
+- [Leaflet.js Documentation](https://leafletjs.com/)
+- [Google Maps Polygon Styling](https://developers.google.com/maps/documentation/javascript/dds-boundaries/style-polygon)
+- [Chloromaps World Data Visualizations](https://chloromaps.com/map/world)
 
-Some species lacked coordinates, limiting pointer coverage. Additionally, improvements could be made by showing more species-level info per country or refining pointer clustering.
+---
 
-## Resources
+## Contributors
 
-- Mammal Taxonomy Map: https://ivory-free-bone.glitch.me/
-- https://zenodo.org/records/7394529
-- https://github.com/mgrafals/Species_Images
-- https://chloromaps.com/map/world
-- https://developers.google.com/maps/documentation/javascript/dds-boundaries/style-polygon
-- Leaflet.js: https://leafletjs.com/
+- Matthew Grafals: Interactive pointer system, species image integration, toggle logic
+- Adi: Country-level data aggregation, web scraping for images
+- Jason: Choropleth map styling, slide deck and visual content
